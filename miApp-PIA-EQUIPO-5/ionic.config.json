@@ -1,0 +1,7 @@
+{
+  "name": "miApp-PIA-EQUIPO-5",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
