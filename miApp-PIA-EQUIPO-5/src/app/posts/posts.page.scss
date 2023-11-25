@@ -1,0 +1,56 @@
+ion-card{
+    background-color: black;
+    margin:10px 0 0 0;
+    ion-card-header{
+        font-size: large;
+        display: flex;
+        span.Tarjeta{
+            height: 35px;
+            width: 35px;
+            display: inline-block;
+            ion-icon{
+                display: table-header-group;
+            }
+        }
+        b{
+            align-items: center;
+            display: flex;
+        }
+        ion-icon{
+            margin: auto;
+            margin-right: 0;
+        }
+    }
+    ion-card-content{
+        padding: 0;
+    }
+    .cardfooter{
+        ion-icon{
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .like{
+            --width: 6px;
+          --height: 6px;
+          --border-radius: 50%;
+          --padding-start: 10px;
+          --padding-end: 1px;
+        }
+        ion-icon:nth-child(4){
+             float: right;
+        }
+    }
+    .imagen{
+        align-items: center;
+        margin: auto;
+    }
+}
+.like{
+    --width: 6px;
+  --height: 6px;
+  --border-radius: 50%;
+  --padding-start: 1px;
+  --padding-end: 1px;
+}
+

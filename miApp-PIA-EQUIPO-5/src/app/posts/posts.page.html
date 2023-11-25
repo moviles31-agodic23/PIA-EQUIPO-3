@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-card *ngFor="let foto of FotoServiceService.fotos; index as i">
+    <ion-card-header>
+      <span class="Tarjeta"><ion-icon name="person-circle-outline" size="xs"></ion-icon></span>
+      <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MiguelAngel</b> <ion-icon name="ellipsis-horizontal" size="md"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-img> </ion-img>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col size="12" >
+        <img class="Imagen"  [src]="foto.webviewPath" alt="">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="cardfooter">
+      <ion-col>
+        <ion-button class="like" fill="clear" size="xs" (click)="CambiarColor()">
+          <ion-icon [name]="this.Cambiar" size="xs" [color]="this.CambiarC"></ion-icon>
+        </ion-button>
+        <ion-icon name="chatbubble-outline" size="medium"></ion-icon>
+        <ion-icon name="paper-plane-outline" size="medium"></ion-icon>
+        <ion-icon name="bookmark-outline" size="medium"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <b>100 Likes</b>
+    </ion-row>
+    <ion-row>
+      <b>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups </b>
+    </ion-row>
+    <ion-row>
+      <span class="Tarjeta"><ion-icon name="person-circle-outline" size="xs"></ion-icon></span>
+      <b>Agregar un comentario</b>
+    </ion-row>
+  </ion-card>
+</ion-content>
