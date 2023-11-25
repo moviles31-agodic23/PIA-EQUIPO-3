@@ -3,7 +3,7 @@ import{ FormGroup,
         FormControl, 
         Validators, 
         FormBuilder } from '@angular/forms';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +15,7 @@ export class LoginPage implements OnInit {
   formularioLogin: FormGroup;
 
   constructor(public fb: FormBuilder,
-    public alertController: AlertController,
-    public navCtrl: NavController) {
+    public alertController: AlertController) {
 
     this.formularioLogin = this.fb.group({
       'nombre': new FormControl("", Validators.required),
@@ -29,12 +28,12 @@ export class LoginPage implements OnInit {
    async ingresar(){
     var f = this.formularioLogin.value;
 
-    var usuario = JSON.parse("usuario",usuario);
+    var UsuarioData = '{"nombre": "user", "password": "pass"}'; 
+    var Usuario = JSON.parse(UsuarioData);
 
-    if(usuario.nombre == f.nombre && usuario.password == f.password){
-      console.log('Ingresado');
-      localStorage.setItem('ingresado','true');
-      this.navCtrl.navigateRoot('inicio');
+    if(Usuario.nombre == f.nombre && Usuario.password == f.password){
+      console.log('ingresado');
+      
     }else{
       const alert = await this.alertController.create({
         header :"Datos incorrectos", 
