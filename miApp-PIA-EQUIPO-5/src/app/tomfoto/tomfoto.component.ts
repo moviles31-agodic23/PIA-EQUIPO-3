@@ -11,6 +11,10 @@ export class TomFotoComponent {
 
   constructor(public photoService: PhotoService, private router: Router) { }
 
+  async ngOnInit() {
+    await this.photoService.loadSaved();
+  }
+
   async addPhotoToGallery() {
     try {
       await this.photoService.addNewToGallery();
@@ -19,6 +23,8 @@ export class TomFotoComponent {
       console.error('Error adding photo:', error);
     }
   }
+
+
 
 sendtopubfoto() {
   this.router.navigate(['/pubfoto']); 

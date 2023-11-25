@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TomFotoComponent } from '../tomfoto/tomfoto.component';
 import { PubfotoComponent } from '../pubfoto/pubfoto.component';
+import { ShowphotosComponent } from '../showphotos/showphotos.component';
 import { RouterModule } from '@angular/router';
 
 
@@ -17,6 +18,6 @@ import { RouterModule } from '@angular/router';
     HomePageRoutingModule,
     RouterModule
   ],
-  declarations: [HomePage, TomFotoComponent, PubfotoComponent]
+  declarations: [HomePage, TomFotoComponent, PubfotoComponent, ShowphotosComponent]
 })
 export class HomePageModule {}

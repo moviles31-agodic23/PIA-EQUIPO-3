@@ -9,6 +9,7 @@ import { Platform } from '@ionic/angular';
 })
 export class PhotoService {
   public photos: UserPhoto | null = null;
+  public savedphotos: UserPhoto[] = []; ;
   private PHOTO_STORAGE: string = 'latest_photo';
   private platform: Platform;
 
@@ -25,6 +26,7 @@ export class PhotoService {
   
     const savedImageFile = await this.savePicture(capturedPhoto);
     this.photos = savedImageFile;
+    this.savedphotos.unshift(savedImageFile);
 
     await Preferences.set({
       key: this.PHOTO_STORAGE,
@@ -35,7 +37,7 @@ export class PhotoService {
   private async savePicture(photo: Photo): Promise<UserPhoto> {
     const base64Data = await this.readAsBase64(photo);
   
-    const fileName = Date.now() + '.jpeg';
+    const fileName = 'buscar' + Date.now() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
@@ -66,7 +68,7 @@ export class PhotoService {
 
   public async loadSaved() {
     const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = value ? JSON.parse(value) : null;
+    this.photos = (value ? JSON.parse(value) : null) as UserPhoto;
 
     if (this.photos) {
       const readFile = await Filesystem.readFile({

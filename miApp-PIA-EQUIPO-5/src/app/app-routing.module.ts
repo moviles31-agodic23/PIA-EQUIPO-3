@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { TomFotoComponent } from './tomfoto/tomfoto.component';
 import { PubfotoComponent } from './pubfoto/pubfoto.component';
+import { ShowphotosComponent } from './showphotos/showphotos.component';
+
 
 const routes: Routes = [
   {
@@ -16,7 +18,8 @@ const routes: Routes = [
 
   { path: 'tomfoto', component: TomFotoComponent },
   { path: 'pubfoto', component: PubfotoComponent },
-  
+  { path: 'showphotos', component: ShowphotosComponent },
+
 ];
 
 @NgModule({

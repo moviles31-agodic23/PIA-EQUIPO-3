@@ -1,0 +1,9 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let savedphoto of photoService.savedphotos; index as position">
+        <ion-img [src]="savedphoto.webviewPath"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
