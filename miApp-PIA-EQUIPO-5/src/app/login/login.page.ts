@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
    async ingresar(){
     var f = this.formularioLogin.value;
 
-    var usuario = JSON.parse(usuario,usuario);
+    var usuario = JSON.parse("usuario",usuario);
 
     if(usuario.nombre == f.nombre && usuario.password == f.password){
       console.log('Ingresado');
