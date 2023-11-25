@@ -3,7 +3,7 @@ import{ FormGroup,
         FormControl, 
         Validators, 
         FormBuilder } from '@angular/forms';
-import { AlertController} from '@ionic/angular';
+import { AlertController, NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,8 @@ export class LoginPage implements OnInit {
   formularioLogin: FormGroup;
 
   constructor(public fb: FormBuilder,
-    public alertController: AlertController) {
+    public alertController: AlertController,
+    public navCtrl: NavController) {
 
     this.formularioLogin = this.fb.group({
       'nombre': new FormControl("", Validators.required),
@@ -28,10 +29,14 @@ export class LoginPage implements OnInit {
    async ingresar(){
     var f = this.formularioLogin.value;
 
-    var UsuarioData = '{"nombre": "user", "password": "pass"}'; 
-    var Usuario = JSON.parse(UsuarioData);
+    var UsuarioData = localStorage.getItem('usuario');
+    if (UsuarioData !== null) {
+      var usuario= JSON.parse(UsuarioData);
+    } else {
+      console.log('No hay datos del usuario');
+    }
 
-    if(Usuario.nombre == f.nombre && Usuario.password == f.password){
+    if(usuario.nombre == f.nombre && usuario.password == f.password){
       console.log('ingresado');
       
     }else{

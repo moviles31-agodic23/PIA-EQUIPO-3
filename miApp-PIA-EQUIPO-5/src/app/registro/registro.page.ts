@@ -41,9 +41,10 @@ export class RegistroPage implements OnInit {
 
   var usuario = {
     nombre: f.nombre,
-    password: f.password,
-    
-  }
-  localStorage.setItem("usuario", JSON.stringify(usuario));
+    password: f.password
+  };
+  
+  var usuariostring = JSON.stringify(usuario);
+  localStorage.setItem('usuario', usuariostring);
 }
 }
