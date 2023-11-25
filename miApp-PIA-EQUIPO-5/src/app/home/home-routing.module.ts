@@ -5,11 +5,13 @@ import { PublicacionesComponent } from '../publicaciones/publicaciones.component
 import { PostsPage } from '../posts/posts.page';
 import { FotosPage } from '../fotos/fotos.page';
 import { FotosPageModule } from '../fotos/fotos.module';
+import { LoginPage } from '../login/login.page';
+import { PerfilPage } from '../perfil/perfil.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
+    component: HomePage ,
     children:[
       {
         path:'Posts',

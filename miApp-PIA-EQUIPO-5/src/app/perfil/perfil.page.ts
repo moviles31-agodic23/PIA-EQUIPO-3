@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FotoServiceService } from '../foto-service.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  constructor(public FotoServiceService:FotoServiceService ) { }
+  
+  AgregarAGalleria() {
+    this.FotoServiceService.AgregarAGalleria();
+  }
+  
+  Editable: boolean = true
+  
+  ToggleEditar(): void{
+    if ( this.Editable === true) {
+      this.Editable = false;
+    } else {
+      this.Editable = true;
+    }
+  }
 
   ngOnInit() {
   }

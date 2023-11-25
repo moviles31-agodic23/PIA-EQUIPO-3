@@ -1,13 +1,57 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Perfil</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <h2>@Usuario</h2>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-row>
+    <ion-col size="4">
+      <ion-button fill="clear" onclick="AgregarAGalleria()">
+        <ion-icon  class="icon" icon="person-circle-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col class="Arriba">
+      <ion-label>
+        <strong>1,234</strong>
+      </ion-label>
+      <p>Publicaciones</p>
+    </ion-col>
+    <ion-col class="Arriba">
+      <ion-label>
+        <strong>5,678</strong>
+      </ion-label>
+      <p>Seguidores</p>
+    </ion-col>
+    <ion-col class="Arriba">
+      <ion-label>
+        <strong>9,101</strong>
+      </ion-label>
+      <p>Siguiendo</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="marginTop">
+    <ion-col>
+      <ion-row>
+        <ion-label>{{this.Editable}}</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-textarea [readonly]="false"></ion-textarea>
+        <!--<ion-textarea [readonly]="this.Editable"></ion-textarea>-->
+      </ion-row>
+      
+    </ion-col>
+  </ion-row>
+  <ion-row class="marginTop">
+    <ion-col size="12">
+      <ion-button onclick="listen(this)" expand="block" size="small" fill="outline" color="medium">
+        <ion-text color="dark">Edit Profile</ion-text>
+      </ion-button>      
+    </ion-col>
+  </ion-row>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="4" *ngFor="let foto of FotoServiceService.fotos; index as i">
+      <img [src]="foto.webviewPath" alt="">
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>

@@ -25,10 +25,8 @@ export class PostsPage implements OnInit {
       this.Cambiar = 'heart';
       this.CambiarC = 'danger';
     }
-  }
-  
+  } 
   ngOnInit() {
   }
-
 
 }
