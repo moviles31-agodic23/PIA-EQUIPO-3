@@ -6,9 +6,12 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PublicacionesComponent } from './publicaciones/publicaciones.component';
+import { FotosPage } from './fotos/fotos.page';
+import { FotosPageModule } from './fotos/fotos.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PublicacionesComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

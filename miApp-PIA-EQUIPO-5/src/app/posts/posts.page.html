@@ -1,0 +1,36 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <span class="Tarjeta"><ion-icon name="person-circle-outline" size="xs"></ion-icon></span>
+      <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MiguelAngel</b> <ion-icon name="ellipsis-horizontal" size="md"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-img> </ion-img>
+    </ion-card-content>
+
+    <ion-row class="cardfooter">
+      <ion-col *ngFor="let foto of fotos; index as i">
+        <img [src]="foto.webViewPath" alt="">
+      </ion-col>
+      <ion-col>
+        <ion-button>
+          <ion-icon name="heart-outline" size="sm" fill="clear" color="Red"></ion-icon>
+        </ion-button>
+        <ion-icon name="chatbubble-outline"></ion-icon>
+        <ion-icon name="paper-plane-outline"></ion-icon>
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <b>100 Likes</b>
+    </ion-row>
+    <ion-row>
+      <b>Descripcion</b>
+    </ion-row>
+    <ion-row>
+      <span class="Tarjeta"><ion-icon name="person-circle-outline" size="xs"></ion-icon></span>
+      <b>Agregar un comentario</b>
+    </ion-row>
+  </ion-card>
+</ion-content>
