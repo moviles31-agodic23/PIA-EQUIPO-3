@@ -30,9 +30,27 @@ ion-card{
             padding-left: 10px;
             padding-right: 10px;
         }
+        .like{
+            --width: 6px;
+          --height: 6px;
+          --border-radius: 50%;
+          --padding-start: 10px;
+          --padding-end: 1px;
+        }
         ion-icon:nth-child(4){
              float: right;
         }
     }
+    .imagen{
+        align-items: center;
+        margin: auto;
+    }
+}
+.like{
+    --width: 6px;
+  --height: 6px;
+  --border-radius: 50%;
+  --padding-start: 1px;
+  --padding-end: 1px;
 }
 

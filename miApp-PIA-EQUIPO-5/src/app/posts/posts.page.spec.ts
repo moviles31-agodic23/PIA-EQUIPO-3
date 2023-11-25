@@ -15,3 +15,7 @@ describe('PostsPage', () => {
     expect(component).toBeTruthy();
   });
 });
+export interface FotosUsuario {
+  filepath: string;
+  webviewPath?: string;
+}
