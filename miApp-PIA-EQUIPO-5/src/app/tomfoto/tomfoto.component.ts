@@ -1,14 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { PhotoService } from '../services/photo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tomfoto',
-  templateUrl: './tomfoto.component.html',
-  styleUrls: ['./tomfoto.component.scss'],
+  templateUrl: 'tomfoto.component.html',
+  styleUrls: ['tomfoto.component.scss']
 })
-export class TomfotoComponent  implements OnInit {
+export class TomFotoComponent {
 
-  constructor() { }
+  constructor(public photoService: PhotoService, private router: Router) { }
 
-  ngOnInit() {}
+  async addPhotoToGallery() {
+    try {
+      await this.photoService.addNewToGallery();
+      this.sendtopubfoto();
+    } catch (error) {
+      console.error('Error adding photo:', error);
+    }
+  }
 
+sendtopubfoto() {
+  this.router.navigate(['/pubfoto']); 
+}
 }

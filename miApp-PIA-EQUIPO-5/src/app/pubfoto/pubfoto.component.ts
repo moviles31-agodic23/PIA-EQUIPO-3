@@ -1,14 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { PhotoService, UserPhoto } from '../services/photo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pubfoto',
   templateUrl: './pubfoto.component.html',
   styleUrls: ['./pubfoto.component.scss'],
 })
-export class PubfotoComponent  implements OnInit {
+export class PubfotoComponent {
+  caption: string = '';
 
-  constructor() { }
+  constructor(public photoService: PhotoService, private router: Router) {
+    this.photoService.loadSaved();
+  }
 
-  ngOnInit() {}
+  getphotosWebviewPath(): string {
+    const photos = this.photoService.getphotos();
+    return photos ? photos.webviewPath || '' : '';
+  }
 
+  publishPhoto() {
+    const userCaption = this.caption;
+    this.caption = 'Agregar descripción...';
+    this.router.navigate(['/home']);
+  }
+
+  cancel() {
+    this.caption = 'Agregar descripción...';
+    this.router.navigate(['/home']);
+  }
 }

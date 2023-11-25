@@ -1,3 +1,28 @@
-<p>
-  pubfoto works!
-</p>
+<ion-content class="ion-padding">
+  <ion-grid class="ion-no-padding ion-align-items-center">
+    <ion-row justify-content-center>
+      <ion-col size="12" class="ion-text-center">
+        <div class="photo-container">
+          <ion-img [src]="getphotosWebviewPath()" class="resized-img"></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <ion-col size="12" class="ion-text-center">
+        <ion-item class="ion-text-center">
+          <ion-input [(ngModel)]="caption" placeholder="Agregar descripción..."></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <ion-col size="12" class="ion-text-center">
+        <div class="button-container">
+          <ion-button expand="block" (click)="publishPhoto()" color="primary" class="publish-button">Publish</ion-button>
+          <ion-button expand="block" (click)="cancel()" color="medium" class="cancel-button">Cancel</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
